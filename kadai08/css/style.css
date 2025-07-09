@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    background-color: #f9f9f9;
+
+    color: #333;
+
+    line-height: 1.6;
+}
+h1, h2, h3 {
+
+    margin: 0.5em 0;
+
+    color: #003366;
+}
+p {
+
+    margin-bottom: 1em;
+}/* ヘッダー・ナビゲーション */
+
+header {
+
+    background-color: #003366;
+
+    color: white;
+
+    padding: 20px;
+
+    text-align: center;
+}
+nav ul {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    list-style: none;
+
+    padding: 0;
+
+    margin-top: 10px;
+
+    flex-wrap: wrap;
+}
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+nav a:hover {
+
+    text-decoration: underline;
+}
+/* トップページの画像 */
+.hero img {
+
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: cover;
+}
+.hero {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.intro-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+.intro-card {
+     background-color: white;
+
+     border-radius: 10px;
+     width: 300px;
+    
+     padding: 20px;
+
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     text-align: center;
+     transition: transform 0.3s;
+}
+.intro-card:hover {
+    transform: scale(1.05);
+}
+/* グリッドレイアウト：スポット・フード */
+.spot-grid, .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.spot-card, .food-card {
+    background-color: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    transition: transform 0.3s;
+}
+.spot-card:hover, .food-card:hover {
+
+    transform: scale(1.03);
+}
+.spot-card img, .food-card img {
+     width: 100%;
+
+     height: 200px;
+
+     object-fit: cover;
+}
+.spot-card h3, .food-card h3 {
+
+    margin: 15px;
+
+    font-size: 1.2rem;
+}
+.spot-card p, .food-card p {
+    margin: 0 15px 15px;
+}
+/* アクセスページ */
+.access-info, .contact {
+    padding: 20px;
+    background-color: white;
+}
+.access-info ul {
+    padding-left: 20px;
+
+    list-style-type: disc;
+}
+.map-container {
+
+    margin: 20px;
+
+    border: 2px solid #ccc;
+ 
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+/* フッター */
+footer {
+
+    background-color: #ccc;
+
+    text-align: center;
+
+    padding: 10px;
+ 
+    margin-top: 40px;
+}
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+ nav ul {
+
+    flex-direction: column;
+
+    align-items: center;
+ }
+ .intro-links {
+
+    flex-direction: column;
+
+    align-items: center;
+ }
+}

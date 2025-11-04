@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>写真の一覧</title>
+<style>
+
+        body {
+
+            font-family: "Segoe UI", sans-serif;
+
+        }
+
+        h2 {
+
+            font-size: 1.5em;
+
+        }
+
+        #photoArea {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 15px;
+
+        }
+
+        #photoArea img {
+
+            width: 200px;
+
+            height: auto;
+
+            border-radius: 4px;
+
+        }
+
+        button {
+
+            margin-top: 10px;
+
+            padding: 5px 10px;
+
+        }
+</style>
+</head>
+<body>
+<h2>写真の一覧</h2>
+<p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
+<button id="showBtn" onclick="showPhotos()">写真を表示</button>
+<div id="photoArea"></div>
+<script>
+
+        function showPhotos() {
+
+            // 表示エリアの取得
+
+            const area = document.getElementById("photoArea");
+
+            // 写真ファイル名の配列（指定順）
+
+            const photos = [
+
+                "photo_7.jpg",
+
+                "photo_8.jpg",
+
+                "photo_6.jpg",
+
+                "photo_5.jpg",
+
+                "photo_4.jpg",
+
+                "photo_3.jpg",
+
+                "photo_2.jpg",
+
+                "photo_1.jpg"
+
+            ];
+
+            // 各画像をdivに追加
+
+            for (let i = 0; i < photos.length; i++) {
+
+                const img = document.createElement("img");
+
+                img.src = photos[i];
+
+                img.alt = "写真" + (i + 1);
+
+                area.appendChild(img);
+
+            }
+
+            // ボタンを削除
+
+            const btn = document.getElementById("showBtn");
+
+            btn.remove();
+
+        }
+</script>
+</body>
+</html>
+ 

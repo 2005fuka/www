@@ -1,0 +1,98 @@
+<doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>1〜10で割り切れる数値</title>
+<style>
+
+    body{font-family: sans-serif; padding:24px;}
+
+    h1{font-size:28px; margin-bottom:8px;}
+
+    .lead{margin-bottom:12px;}
+
+    .result{
+
+      margin-top:18px;
+
+      padding:16px;
+
+      background:#ffd9b6;
+
+      border-radius:4px;
+
+      min-width:220px;
+
+      display:inline-block;
+
+    }
+
+    button{padding:8px 12px;}
+</style>
+</head>
+<body>
+<h1>1〜10で割り切れる数字</h1>
+<p class="lead">
+
+    1、2、3、4、5、6、7、8、9、10で割り切れる最小の数値をJavaScriptで求めます。
+</p>
+<button id="btn">結果を見る</button>
+<div id="output" class="result">ここに結果が表示されます。</div>
+<script>
+
+    // 最大公約数を求める関数
+
+    function gcd(a, b) {
+
+      while (b !== 0) {
+
+        const t = a % b;
+
+        a = b;
+
+        b = t;
+
+      }
+
+      return a;
+
+    }
+
+    // 最小公倍数を求める関数
+
+    function lcm(a, b) {
+
+      return a / gcd(a, b) * b;
+
+    }
+
+    // 1〜10 の最小公倍数を求める関数
+
+    function calcLcm1to10() {
+
+      let result = 1;
+
+      for (let i = 1; i <= 10; i++) {
+
+        result = lcm(result, i);
+
+      }
+
+      return result; // → 2520 になる
+
+    }
+
+    // ボタンが押されたときの処理
+
+    document.getElementById("btn").onclick = function() {
+
+      const answer = calcLcm1to10();
+
+      document.getElementById("output").textContent = "答えは" + answer + "です。";
+
+    };
+</script>
+</body>
+</html>
+ 

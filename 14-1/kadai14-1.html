@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>HTMLの表示</title>
+<style>
+   .box {
+     border: 2px solid #999;
+     padding: 10px;
+     width: 400px;
+     margin-bottom: 10px;
+   }
+   .result {
+     border: 2px solid #999;
+     padding: 10px;
+     width: 400px;
+     margin-top: 10px;
+   }
+</style>
+</head>
+<body>
+<h1>HTMLの表示</h1>
+<p>ボックス内の表示されている部分のHTMLを表示します。</p>
+<!-- 表示されているボックス -->
+<div id="target" class="box">
+<h3>人口800万人以上の都道府県</h3>
+<ul>
+<li>東京都</li>
+<li>神奈川県</li>
+<li>大阪府</li>
+</ul>
+</div>
+<button onclick="showHTML()">HTMLを表示</button>
+<!-- HTML表示結果 -->
+<div id="output" class="result">
+   ここにHTMLが表示されます。
+</div>
+<script>
+   function showHTML() {
+     const target = document.getElementById("target");
+     const output = document.getElementById("output");
+     // innerHTMLでHTMLソースを取得
+     output.textContent = target.innerHTML;
+   }
+</script>
+</body>
+</html>

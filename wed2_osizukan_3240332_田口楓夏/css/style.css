@@ -1,0 +1,55 @@
+body {
+ margin: 0;
+ font-family: sans-serif;
+}
+header {
+ background: #f2a0b6;
+ color: white;
+ padding: 1rem;
+}
+nav ul {
+ list-style: none;
+ display: flex;
+ gap: 1rem;
+ padding: 0;
+}
+nav a {
+ color: white;
+ text-decoration: none;
+}
+nav a:hover {
+ text-decoration: underline;
+}
+.card-list {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1rem;
+ padding: 1rem;
+}
+.card {
+ border: 1px solid #ccc;
+ padding: 1rem;
+ transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+ transform: scale(1.03);
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.card img {
+ width: 100%;
+ height: auto;
+}
+.card a:hover {
+ color: red;
+}
+footer {
+ text-align: center;
+ padding: 1rem;
+ background: #eee;
+}
+/* レスポンシブ */
+@media (max-width: 600px) {
+ .card-list {
+   grid-template-columns: 1fr;
+ }
+}
